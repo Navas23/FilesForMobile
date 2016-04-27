@@ -38,7 +38,7 @@
   width: 18px;
   height: 12px;
   float: left;
-  background-color: white;
+  background-image: url('https://static.inevio.com/script/filesformobile/static/hamburguer.png');
   margin-left: 19px;
   margin-top: 28px;
 }
@@ -111,7 +111,7 @@
   clear: both;
   content: "";
   display: block;
-  width: 301px;
+  width: ~'calc(100% - 72px)';
   height: 1px;
   float: right;
   background: #e5e9ea;

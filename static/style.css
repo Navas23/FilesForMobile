@@ -1,0 +1,174 @@
+
+.animated{
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  transform: translateZ(0);
+}
+
+.center-vertical{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.files-app{
+  width: 100%;
+  height: ~'calc(100% - 48px)';
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.files-header{
+  width: 100%;
+  height: 56px;
+  background-color: #60b25e;
+  border-bottom: 2px solid #56a054;
+  text-align: center;
+}
+
+.files-header .hamburger{
+  width: 18px;
+  height: 12px;
+  float: left;
+  background-color: white;
+  margin-left: 19px;
+  margin-top: 28px;
+}
+
+.files-header span{
+  font-family: Lato;
+  font-weight: bold;
+  font-size: 21px;
+  color: #ffffff;
+  margin-top: 18px;
+  display: inline-block;
+}
+
+.files-container{
+  width: 100%;
+  height: ~'calc(100% - 58px)';
+  background-color: white;
+}
+
+.file{
+  width: 100%;
+  height: 71px;
+}
+
+.file .icon{
+  width: 32px;
+  height: 32px;
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.file .icon img{
+  max-width: 32px;
+  max-height: 32px;
+  vertical-align: middle;
+}
+
+.file-info{
+  display: inline-block;
+  float: left;
+  height: 100%;
+  width: ~'calc(100% - 110px)';
+}
+
+.file-info .file-name{
+  font-size: 17px;
+  font-family: Lato;
+  color: #545f65;
+  margin-top: 15px;
+  margin-bottom: 11px;
+}
+
+.file-info .file-modified{
+  font-size: 13px;
+  font-family: Lato;
+  color: #889399;
+}
+
+.file .more{
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: black;
+  float: right;
+  margin: 0 8px 0 8px;
+}
+
+.file:after{
+  clear: both;
+  content: "";
+  display: block;
+  width: 301px;
+  height: 1px;
+  float: right;
+  background: #e5e9ea;
+}
+
+.footer{
+  width: 100%;
+  height: 48px;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.footer-content{
+  width: ~'calc(100% - 70px)';
+  height: 34px;
+  margin: 0px auto;
+}
+
+.footer-content .back{
+  width: 24px;
+  height: 20px;
+  background-size: 24px 20px;
+  background-image: url('https://static.inevio.com/script/dashboardmobile/static/back.png');
+  float: left;
+}
+
+.footer-content .inevio-logo-container{
+  width: ~'calc(100% - 48px)';
+  height: 34px;
+  text-align: center;
+  float: left;
+}
+
+.footer-content .inevio-logo{
+  width: 30px;
+  height: 34px;
+  background-size: 30px 34px;
+  background-image: url('https://static.inevio.com/script/dashboardmobile/static/gema.png');
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-content .multitask{
+  width: 22px;
+  height: 20px;
+  margin-left: 2px;
+  background-size: 22px 20px;
+  background-image: url('https://static.inevio.com/script/dashboardmobile/static/multitask.png');
+  float: left;
+}
+
+@media all and (max-width: 359px) {
+
+  .footer-content{
+    width: ~'calc(100% - 100px)';
+  }
+
+}

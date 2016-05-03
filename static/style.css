@@ -42,7 +42,7 @@
   height: 88px;
 }
 
-.sidebar .title-container span{
+.sidebar .title-container div{
   font-family: Lato;
   font-size: 21px;
   font-weight: bold;
@@ -56,11 +56,28 @@
   /*background-color: #60b25e;*/
 }
 
+.sidebar .logo{
+  float: left;
+  width: 74px;
+  height: 100%;
+}
+
+.sidebar .section-name-container{
+  height: 100%;
+  float: left;
+}
+
+.sidebar .section-name-container div{
+  font-family: Lato;
+  font-size: 17px;
+  color: #545f65;
+}
+
 .sidebar .section:after{
   clear: both;
   content: "";
   display: block;
-  width: ~'calc(100% - 72px)';
+  width: ~'calc(100% - 74px)';
   height: 1px;
   float: right;
   background: #e5e9ea;
@@ -89,7 +106,7 @@
   margin-top: 2px;
 }
 
-.files-header .folder-name-container  span{
+.files-header .folder-name-container span{
   font-family: Lato;
   font-weight: bold;
   font-size: 21px;

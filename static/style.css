@@ -27,11 +27,11 @@
 }
 
 .files-header{
-  width: 100%;
+  width: ~'calc(100% - 36px)';
+  padding: 0 18px;
   height: 56px;
   background-color: #60b25e;
   border-bottom: 2px solid #56a054;
-  text-align: center;
 }
 
 .files-header .hamburger{
@@ -39,17 +39,35 @@
   height: 12px;
   float: left;
   background-image: url('https://static.inevio.com/script/filesformobile/static/hamburguer.png');
-  margin-left: 19px;
-  margin-top: 28px;
+  margin-top: 2px;
 }
 
-.files-header span{
+.files-header .folder-name-container{
+  float: left;
+  width: ~'calc(100% - 36px)';
+  text-align: center;
+  margin-top: 2px;
+}
+
+.files-header .folder-name-container  span{
   font-family: Lato;
   font-weight: bold;
   font-size: 21px;
   color: #ffffff;
-  margin-top: 18px;
   display: inline-block;
+}
+
+.files-header .more{
+  width: 3px;
+  height: 17px;
+  margin-left: 15px;
+  margin-top: 2px;
+  background-size: 6px 17px;
+  background-position: -3px 0px;
+  background-image: url('https://static.inevio.com/script/filesformobile/static/more.png');
+  display: inline-block;
+  float: left;
+  background-repeat: no-repeat;
 }
 
 .files-container{
@@ -81,7 +99,7 @@
   display: inline-block;
   float: left;
   height: 100%;
-  width: ~'calc(100% - 110px)';
+  width: ~'calc(100% - 112px)';
 }
 
 .file-info .file-name{
@@ -99,10 +117,10 @@
 }
 
 .file .more{
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background-color: black;
+  width: 23px;
+  height: 23px;
+  background-size: 23px 23px;
+  background-image: url('https://static.inevio.com/script/filesformobile/static/moreinfo.png');
   float: right;
   margin: 0 8px 0 8px;
 }

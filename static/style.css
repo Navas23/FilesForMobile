@@ -246,6 +246,14 @@
   margin: 0 18px 0 8px;
 }
 
+.file-options .option-title{
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Lato;
+  color: #889399;
+  margin: 15px 20px;
+}
+
 .file-options .options-header:after{
   clear: both;
   content: "";

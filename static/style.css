@@ -26,15 +26,23 @@
   position: relative;
 }
 
+.opacity{
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  opacity: 0;
+  display: none;
+}
+
 .sidebar{
   position: absolute;
   z-index: 3;
   width: ~'calc(100% - 52px)';
   height: 100%;
   background-color: white;
-  border-right: 52px solid rgba(0,0,0,.3);
-  background-clip: padding-box;
-  /*transform: translate3d(-100%,0,0);*/
+  transform: translate3d(-100%,0,0);
 }
 
 .sidebar .title-container{
@@ -50,10 +58,17 @@
   margin-left: 19px;
 }
 
-.sidebar .section{
+.sidebar .sidebar-element{
   width: 100%;
   height: 56px;
-  /*background-color: #60b25e;*/
+}
+
+.sidebar .sidebar-element.active{
+  background-color: #60b25e;
+}
+
+.sidebar .sidebar-element.active .section-name-container div{
+  color: white;
 }
 
 .sidebar .logo{
@@ -73,7 +88,7 @@
   color: #545f65;
 }
 
-.sidebar .section:after{
+.sidebar .sidebar-element:after{
   clear: both;
   content: "";
   display: block;
@@ -189,6 +204,55 @@
   width: ~'calc(100% - 72px)';
   height: 1px;
   float: right;
+  background: #e5e9ea;
+}
+
+.file-options{
+  width: 100%;
+  height: 458px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(0,100%,0);
+  z-index: 3;
+}
+
+.file-options .options-header{
+  width: 100%;
+  height: 64px;
+  display: inline-block;
+}
+
+.file-options .options-header .options-logo{
+  width: 32px;
+  height: 32px;
+  margin: 16px 24px 16px 20px;
+  float: left;
+}
+
+.file-options .file-title{
+  float: left;
+  font-family: Lato;
+  font-size: 17px;
+  color: #545f65;
+}
+
+.file-options .options-header .options-more{
+  float: right;
+  width: 23px;
+  height: 23px;
+  background-image: url('https://static.inevio.com/script/filesformobile/static/moreinfo.png');
+  float: right;
+  margin: 0 18px 0 8px;
+}
+
+.file-options .options-header:after{
+  clear: both;
+  content: "";
+  display: block;
+  width: ~'calc(100% - 16px)';
+  height: 1px;
+  margin: 0 auto;
   background: #e5e9ea;
 }
 

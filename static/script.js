@@ -81,12 +81,15 @@ win.on('click', '.hamburger', function(){
 
 .on('swipeup', '.file-options', function(){
 
-  console.log('swipe');
-  $( '.file-options' ).transition({
-    'y' : '-100%'
-  },800, function(){
-    optionsDeployed = true;
-  });
+  if( !optionsDeployed ){
+
+    $( '.file-options' ).transition({
+      'y' : '-100%'
+    },800, function(){
+      optionsDeployed = true;
+    });
+
+  }
 
 })
 

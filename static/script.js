@@ -1,6 +1,19 @@
 
 var win = $(document);
 var mode = 0; //0 == none, 1 == sidebar, 2==file-options
+var optionsDeployed = false;
+
+var intervalo = setInterval( function(){
+  if( typeof Hammer !== 'undefined' ){
+    clearInterval( intervalo );
+    console.log('cargo');
+    hammerLoaded = true;
+    mc = new Hammer(win[0] , {
+      domEvents:true
+    });
+    mc.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+  }
+},50)
 
 win.on('click', '.hamburger', function(){
 
@@ -64,4 +77,31 @@ win.on('click', '.hamburger', function(){
 
 .on('click', '.opacity', function(){
   $('.back').click();
+})
+
+.on('swipeup', '.file-options', function(){
+
+  console.log('swipe');
+  $( '.file-options' ).transition({
+    'y' : '-100%'
+  },800, function(){
+    optionsDeployed = true;
+  });
+
+})
+
+.on('swipedown', '.file-options', function(){
+
+  if( !optionsDeployed ){
+    $('.back').click();
+  }else{
+
+    $( '.file-options' ).transition({
+      'y' : '-289px'
+    },800, function(){
+      optionsDeployed = false;
+    });
+
+  }
+
 })

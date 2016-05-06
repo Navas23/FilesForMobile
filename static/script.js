@@ -6,7 +6,6 @@ var optionsDeployed = false;
 var intervalo = setInterval( function(){
   if( typeof Hammer !== 'undefined' ){
     clearInterval( intervalo );
-    console.log('cargo');
     hammerLoaded = true;
     mc = new Hammer(win[0] , {
       domEvents:true
@@ -15,35 +14,15 @@ var intervalo = setInterval( function(){
   }
 },50)
 
-win.on('click', '.hamburger', function(){
-
-  $( '.sidebar' ).transition({
-    'x' : 0
-  },800, function(){
-    mode = 1;
-  });
+var showCover = function(){
 
   $('.opacity').show().transition({
     'opacity' : 1
   },800);
 
-})
+}
 
-.on('click', '.back', function(){
-
-  if( mode == 1 ){
-
-    $( '.sidebar' ).transition({
-      'x' : '-100%'
-    },800);
-
-  }else if( mode == 2 ){
-
-    $( '.file-options' ).transition({
-      'y' : '0%'
-    },800);
-
-  }
+var hideCover = function(){
 
   $('.opacity').transition({
     'opacity' : 0
@@ -52,20 +31,95 @@ win.on('click', '.hamburger', function(){
     mode = 0;
   });
 
-})
+}
 
-.on('click', '.file .more', function(){
+var showSidebar = function(){
+
+  $( '.sidebar' ).transition({
+    'x' : 0
+  },800, function(){
+    mode = 1;
+  });
+  showCover();
+
+}
+
+var hideSidebar = function(){
+
+  $( '.sidebar' ).transition({
+    'x' : '-100%'
+  },800);
+  hideCover();
+
+}
+
+var showOptions = function(){
 
   $( '.file-options' ).transition({
     'y' : '-289px'
   },800, function(){
     mode = 2;
   });
+  showCover();
 
-  $('.opacity').show().transition({
-    'opacity' : 1
+}
+
+var deployOptions = function(){
+
+  if( !optionsDeployed ){
+
+    $( '.file-options' ).transition({
+      'y' : '-100%'
+    },800, function(){
+      optionsDeployed = true;
+    });
+
+  }
+
+}
+
+var undeployOptions = function(){
+
+  if( !optionsDeployed ){
+    hideOptions();
+  }else{
+
+    $( '.file-options' ).transition({
+      'y' : '-289px'
+    },800, function(){
+      optionsDeployed = false;
+    });
+
+  }
+
+}
+
+var hideOptions = function(){
+
+  $( '.file-options' ).transition({
+    'y' : '0%'
   },800);
 
+  hideCover();
+
+}
+
+win.on('click', '.hamburger', function(){
+  showSidebar();
+})
+
+.on('click', '.back', function(){
+
+  if( mode == 1 ){
+    hideSidebar();
+  }else if( mode == 2 ){
+    hideOptions();
+  }
+
+})
+
+.on('click', '.file .more', function(){
+  showOptions();
 })
 
 .on('click', '.sidebar-element', function(){
@@ -80,31 +134,17 @@ win.on('click', '.hamburger', function(){
 })
 
 .on('swipeup', '.file-options', function(){
-
-  if( !optionsDeployed ){
-
-    $( '.file-options' ).transition({
-      'y' : '-100%'
-    },800, function(){
-      optionsDeployed = true;
-    });
-
-  }
-
+  deployOptions();
 })
 
 .on('swipedown', '.file-options', function(){
+  undeployOptions();
+})
 
-  if( !optionsDeployed ){
-    $('.back').click();
-  }else{
+.on('swiperight', '.files-container', function(){
+  $('.hamburger').click();
+})
 
-    $( '.file-options' ).transition({
-      'y' : '-289px'
-    },800, function(){
-      optionsDeployed = false;
-    });
-
-  }
-
+.on('swipeleft', '.sidebar', function(){
+  $('.back').click();
 })

@@ -61,6 +61,7 @@
 .sidebar .sidebar-element{
   width: 100%;
   height: 56px;
+  display: inline-block;
 }
 
 .sidebar .sidebar-element.active{
@@ -75,6 +76,92 @@
   float: left;
   width: 74px;
   height: 100%;
+  background-image: url('https://static.inevio.com/script/filesformobile/static/sprite-sidebar.png');
+  background-size: 295px 26px;
+}
+
+.sidebar .principal.active .logo{
+  background-position: -22px 0px;
+}
+
+.sidebar .principal .logo{
+  margin-left: 27px;
+  margin-right: 26px;
+  width: 21px;
+  height: 21px;
+  background-position: 0px 0px;
+}
+
+.sidebar .recibido.active .logo{
+  background-position: -237px 0px;
+}
+
+.sidebar .recibido .logo{
+  margin-left: 27px;
+  margin-right: 27px;
+  width: 20px;
+  height: 21px;
+  background-position: -216px 0px;
+}
+
+.sidebar .compartido.active .logo{
+  background-position: -195px 0px;
+}
+
+.sidebar .compartido .logo{
+  margin-left: 27px;
+  margin-right: 27px;
+  width: 20px;
+  height: 21px;
+  background-position: -175px 0px;
+}
+
+.sidebar .documentos.active .logo{
+  background-position: -153px 0px;
+}
+
+.sidebar .documentos .logo{
+  margin-left: 26px;
+  margin-right: 26px;
+  width: 22px;
+  height: 26px;
+  background-position: -131px 0px;
+}
+
+.sidebar .imagenes.active .logo{
+  background-position: -106px 0px;
+}
+
+.sidebar .imagenes .logo{
+  margin-left: 23px;
+  margin-right: 24px;
+  width: 25px;
+  height: 20px;
+  background-position: -81px 0px;
+}
+
+.sidebar .musica.active .logo{
+  background-position: -62px 0px;
+}
+
+.sidebar .musica .logo{
+  margin-left: 25px;
+  margin-right: 26px;
+  width: 19px;
+  height: 23px;
+  background-position: -43px 0px;
+}
+
+.sidebar .videos.active .logo{
+  background-position: -276px 0px;
+}
+
+.sidebar .videos .logo{
+  margin-left: 25px;
+  margin-right: 26px;
+  width: 19px;
+  height: 22px;
+  background-position: -257px 0px;
 }
 
 .sidebar .section-name-container{

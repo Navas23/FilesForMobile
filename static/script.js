@@ -56,7 +56,7 @@ var hideSidebar = function(){
 var showOptions = function(){
 
   $( '.file-options' ).transition({
-    'y' : '-289px'
+    'y' : '-413px'
   },800, function(){
     mode = 2;
   });

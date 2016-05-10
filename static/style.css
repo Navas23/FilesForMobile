@@ -445,6 +445,7 @@
   transform: translate3d(0%, 0, 0);
   bottom: 45px;
   background-color: white;
+  text-align: center;
 }
 
 .create-link-container:before{
@@ -461,13 +462,62 @@
   font-family: Lato;
   font-size: 21px;
   margin-top: 30px;
-  margin-bottom: 48px;
   color: #545f65;
   text-align: center;
+  margin-bottom: 38px;
 }
 
 .toggles-container{
   margin: 0 20px;
+}
+
+.toggle{
+  height: 31px;
+  margin-bottom: 20px;
+}
+
+.toggle .toggle-name{
+  font-family: Lato;
+  font-size: 15px;
+  color: #545f65;
+  float: left;
+}
+
+.toggle .selector{
+  width: 51px;
+  height: 29px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background-color: #f9f9fb;
+  border: solid 1px #ccd3d5;
+  float: right;
+}
+
+.toggle .selector i{
+  float: left;
+  width: 25px;
+  height: 25px;
+  background-color: #889399;
+  border-radius: 50%;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.toggle .selector.active i{
+  margin-left: 24px;
+  background-color: #60b25e;
+}
+
+.generate-btn{
+  margin-top: 25px;
+  width: 160px;
+  height: 47px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  background-color: #60b25e;
+  background-image: none;
 }
 
 .footer{

@@ -148,3 +148,7 @@ win.on('click', '.hamburger', function(){
 .on('swipeleft', '.sidebar', function(){
   $('.back').click();
 })
+
+.on('click', '.selector', function(){
+  $(this).toggleClass('active');
+})

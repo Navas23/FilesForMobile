@@ -1,6 +1,6 @@
 
 var win = $(document);
-var mode = 0; //0 == none, 1 == sidebar, 2==file-options
+var mode = 0; //0 == none, 1 == sidebar, 2==file-options, 3==creating-link
 var optionsDeployed = false;
 
 var intervalo = setInterval( function(){
@@ -56,7 +56,7 @@ var hideSidebar = function(){
 var showOptions = function(){
 
   $( '.file-options' ).transition({
-    'y' : '-413px'
+    'y' : '-289px'
   },800, function(){
     mode = 2;
   });
@@ -104,6 +104,34 @@ var hideOptions = function(){
 
 }
 
+var showCreateLink = function(){
+
+  $( '.file-options' ).transition({
+    'y' : '-413px'
+  },800);
+
+  $( '.create-link-container' ).transition({
+    'x' : '0'
+  },800, function(){
+    mode = 3;
+  });
+
+}
+
+var hideCreateLink = function(){
+
+  $( '.file-options' ).transition({
+    'y' : '-289px'
+  },800);
+
+  $( '.create-link-container' ).transition({
+    'x' : '100%'
+  },800, function(){
+    mode = 2;
+  });
+
+}
+
 win.on('click', '.hamburger', function(){
   showSidebar();
 })
@@ -114,6 +142,8 @@ win.on('click', '.hamburger', function(){
     hideSidebar();
   }else if( mode == 2 ){
     hideOptions();
+  }else if( mode == 3 ){
+    hideCreateLink();
   }
 
 })
@@ -151,4 +181,8 @@ win.on('click', '.hamburger', function(){
 
 .on('click', '.selector', function(){
   $(this).toggleClass('active');
+})
+
+.on('click', '.option.create-link', function(){
+  showCreateLink();
 })

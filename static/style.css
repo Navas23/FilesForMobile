@@ -446,6 +446,7 @@
   bottom: 45px;
   background-color: white;
   text-align: center;
+  display: none;
 }
 
 .create-link-container:before{

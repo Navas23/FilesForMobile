@@ -2,6 +2,7 @@
 var win = $(document);
 var mode = 0; //0 == none, 1 == sidebar, 2==file-options, 3==creating-link
 var optionsDeployed = false;
+var yDeployed = 0;
 
 var intervalo = setInterval( function(){
   if( typeof Hammer !== 'undefined' ){
@@ -18,7 +19,7 @@ var showCover = function(){
 
   $('.opacity').show().transition({
     'opacity' : 1
-  },800);
+  },500);
 
 }
 
@@ -26,7 +27,7 @@ var hideCover = function(){
 
   $('.opacity').transition({
     'opacity' : 0
-  },800,function(){
+  },500,function(){
     $(this).hide();
     mode = 0;
   });
@@ -37,7 +38,7 @@ var showSidebar = function(){
 
   $( '.sidebar' ).transition({
     'x' : 0
-  },800, function(){
+  },500, function(){
     mode = 1;
   });
   showCover();
@@ -48,7 +49,7 @@ var hideSidebar = function(){
 
   $( '.sidebar' ).transition({
     'x' : '-100%'
-  },800);
+  },500);
   hideCover();
 
 }
@@ -57,8 +58,9 @@ var showOptions = function(){
 
   $( '.file-options' ).transition({
     'y' : '-289px'
-  },800, function(){
+  },500, function(){
     mode = 2;
+    yDeployed = '-289px';
   });
   showCover();
 
@@ -70,8 +72,9 @@ var deployOptions = function(){
 
     $( '.file-options' ).transition({
       'y' : '-100%'
-    },800, function(){
+    },500, function(){
       optionsDeployed = true;
+      yDeployed = '-100%'
     });
 
   }
@@ -86,8 +89,9 @@ var undeployOptions = function(){
 
     $( '.file-options' ).transition({
       'y' : '-289px'
-    },800, function(){
+    },500, function(){
       optionsDeployed = false;
+      yDeployed = '-289px';
     });
 
   }
@@ -98,7 +102,7 @@ var hideOptions = function(){
 
   $( '.file-options' ).transition({
     'y' : '0%'
-  },800);
+  },500);
 
   hideCover();
 
@@ -106,29 +110,38 @@ var hideOptions = function(){
 
 var showCreateLink = function(){
 
-  $( '.file-options' ).transition({
-    'y' : '-413px'
-  },800);
+  if( mode == 2 ){
 
-  $( '.create-link-container' ).transition({
-    'x' : '0'
-  },800, function(){
-    mode = 3;
-  });
+    $( '.file-options' ).transition({
+      'y' : '-413px'
+    },500);
+
+    $( '.create-link-container' ).show().transition({
+      'x' : '0'
+    },500, function(){
+      mode = 3;
+    });
+    
+  }
 
 }
 
 var hideCreateLink = function(){
 
-  $( '.file-options' ).transition({
-    'y' : '-289px'
-  },800);
+  if( mode == 2 ){
 
-  $( '.create-link-container' ).transition({
-    'x' : '100%'
-  },800, function(){
-    mode = 2;
-  });
+    $( '.file-options' ).transition({
+      'y' : yDeployed
+    },500);
+
+    $( '.create-link-container' ).transition({
+      'x' : '100%'
+    },500, function(){
+      mode = 2;
+      $(this).hide();
+    });
+
+  }
 
 }
 

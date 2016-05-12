@@ -1,6 +1,6 @@
 
 var win = $(document);
-var mode = 0; //0 == none, 1 == sidebar, 2==file-options, 3==creating-link
+var mode = 0; //0 == none, 1 == sidebar, 2==file-options, 3==creating-link, 4 == more-info
 var optionsDeployed = false;
 var yDeployed = 0;
 
@@ -68,7 +68,7 @@ var showOptions = function(){
 
 var deployOptions = function(){
 
-  if( !optionsDeployed ){
+  if( !optionsDeployed && mode == 2 ){
 
     $( '.file-options' ).transition({
       'y' : '-100%'
@@ -121,14 +121,14 @@ var showCreateLink = function(){
     },500, function(){
       mode = 3;
     });
-    
+
   }
 
 }
 
 var hideCreateLink = function(){
 
-  if( mode == 2 ){
+  if( mode == 3 ){
 
     $( '.file-options' ).transition({
       'y' : yDeployed
@@ -198,4 +198,25 @@ win.on('click', '.hamburger', function(){
 
 .on('click', '.option.create-link', function(){
   showCreateLink();
+})
+
+.on('click', '.options-more', function(){
+
+  if( mode == 3 ){
+
+    $( '.create-link-container' ).transition({
+      'x' : '100%'
+    },500, function(){
+      $(this).hide();
+    });
+
+  }
+  
+  $('.file-options').transition({
+    'height' : '100%',
+    'y' : '-100%'
+  },500, function(){
+    mode = 4;
+  });
+
 })

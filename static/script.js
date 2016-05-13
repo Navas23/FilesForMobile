@@ -71,10 +71,10 @@ var deployOptions = function(){
   if( !optionsDeployed && mode == 2 ){
 
     $( '.file-options' ).transition({
-      'y' : '-100%'
+      'y' : '-458px'
     },500, function(){
       optionsDeployed = true;
-      yDeployed = '-100%'
+      yDeployed = '-458px'
     });
 
   }
@@ -145,6 +145,16 @@ var hideCreateLink = function(){
 
 }
 
+var showFileInfo = function(){
+
+}
+
+var hideFileInfo = function(){
+
+
+
+}
+
 win.on('click', '.hamburger', function(){
   showSidebar();
 })
@@ -157,6 +167,14 @@ win.on('click', '.hamburger', function(){
     hideOptions();
   }else if( mode == 3 ){
     hideCreateLink();
+  }else if( mode == 4 ){
+
+    $('.file-options').transition({
+      'y' : yDeployed
+    },500, function(){
+      mode = 2;
+    });
+
   }
 
 })
@@ -211,7 +229,7 @@ win.on('click', '.hamburger', function(){
     });
 
   }
-  
+
   $('.file-options').transition({
     'height' : '100%',
     'y' : '-100%'

@@ -296,7 +296,7 @@
 
 .file-options{
   width: 100%;
-  height: 458px;
+  height: 100%;
   background-color: white;
   position: absolute;
   bottom: 0;
@@ -519,6 +519,134 @@
   border-radius: 24px;
   background-color: #60b25e;
   background-image: none;
+}
+
+.file-details{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate3d(0%, 0, 0);
+  top: 64px;
+  background-color: white;
+  text-align: center;
+}
+
+.file-details .title{
+  margin: 15px 0px 18px 20px;
+  font-family: Lato;
+  font-size: 13px;
+  font-weight: bold;
+  color: #889399;
+}
+
+.file-section:before{
+  clear: both;
+  content: "";
+  display: block;
+  width: ~'calc(100% - 16px)';
+  height: 1px;
+  margin: 0 auto;
+  background: #e5e9ea;
+}
+
+.file-size-section{
+  width: 100%;
+  height: 90px;
+  text-align: left;
+}
+
+.file-size-section .file-size-value{
+  color: #545f65;
+  font-size: 29px;
+  font-family: Lato;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.file-location-section{
+  width: 100%;
+  height: 90px;
+  text-align: left;
+}
+
+.file-location-section .file-location-title{
+  margin-bottom: 28px;
+}
+
+.file-location-section .file-location-value{
+  color: #545f65;
+  font-size: 15px;
+  font-family: Lato;
+  margin-left: 20px;
+}
+
+.file-dates-section{
+  width: 100%;
+  height: 75px;
+  text-align: left;
+}
+
+.file-created-section, .file-modified-section{
+  float: left;
+  width: 50%;
+}
+
+.file-dates-section .divider{
+  width: 1px;
+  height: 45px;
+  background-color: #e5e9ea;
+  float: left;
+}
+
+.file-modified-section{
+  width: ~'calc(50% - 1px)';
+}
+
+.file-created-value, .file-modified-value{
+  color: #545f65;
+  font-size: 15px;
+  font-family: Lato;
+  margin-left: 20px;
+}
+
+.file-modified-title, .file-modified-value{
+  margin-left: 14px !important;
+}
+
+.file-owners-section{
+  width: 100%;
+  text-align: left;
+}
+
+.file-owners-section .user{
+  width: ~'calc(100% - 40px)';
+  height: 35px;
+  margin: 0px 20px 10px;
+}
+
+.file-owners-section .user figure{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('https://download.inevio.com/avatar/512/small');
+  float: left;
+}
+
+.file-owners-section .username{
+  font-family: Lato;
+  font-size: 15px;
+  color: #545f65;
+  margin-left: 15px;
+  float: left;
+}
+
+.file-owners-section .is-owner{
+  font-family: Lato;
+  font-size: 12px;
+  float: right;
+  color: #889399;
 }
 
 .footer{

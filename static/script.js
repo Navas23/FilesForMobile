@@ -230,8 +230,11 @@ win.on('click', '.hamburger', function(){
 
   }
 
+  $('.file-details').transition({
+    'y' : '0%'
+  },500);
+
   $('.file-options').transition({
-    'height' : '100%',
     'y' : '-100%'
   },500, function(){
     mode = 4;
